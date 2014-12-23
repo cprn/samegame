@@ -1,9 +1,10 @@
+#!/usr/bin/env python3
 import model
 
 
 def verify(condition, error):
     if not condition:
-        print error
+        print(error)
 
 model.randomize()
 
@@ -18,4 +19,4 @@ for row in model.data:
 
 verify(num_colours == 5, 'Wrong amount of colours')
 
-print 'END'
+print('END')
