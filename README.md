@@ -7,14 +7,14 @@ It’s based on [Model-ViewController & Pygame](https://www.youtube.com/watch?v=
 
 1. public
 
-  * populate game grid
+  * ~~populate game grid~~
   * remove block
-  * get block colour
+  * ~~get block colour~~
   * get number of blocks left
   * get number of moves
   * get moves remaining
-  * get height
-  * get width
+  * ~~get height~~
+  * ~~get width~~
 
 2. private
 
