@@ -34,7 +34,7 @@ model.data = [[0, 0], [1, 1]]
 rm = (1, 1)
 verify(model.get_block_colour(*rm) is not None, "Block 2,0 None before test")
 model.remove_block(*rm)
-verify(model.get_block_colour(*rm)is None, "Block 2,0 not None")
+verify(model.get_block_colour(*rm) is None, "Block 2,0 not None")
 
 model.data = [
     [1, 1, 2],
@@ -43,5 +43,9 @@ model.data = [
 ]
 syblings = [(0, 2), (1, 2), (1, 1)]
 verify(model.get_syblings(*syblings[0]) == syblings, "No syblings")
+x = (0, 2)
+model.remove_block(*x)
+for s in syblings:
+    verify(model.get_block_colour(*s) is None, repr(s) + " not removed")
 
 print('END')

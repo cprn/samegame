@@ -13,9 +13,9 @@ def init():
         data.append(r)
 
 
-def get_block_colour(row, col):
-    if row >= 0 and row < get_height() and col >= 0 and col < get_width():
-        return data[row][col]
+def get_block_colour(x, y):
+    if x >= 0 and x < get_width() and y >= 0 and y < get_height():
+        return data[x][y]
     return None
 
 
@@ -43,4 +43,5 @@ def get_width():
 
 
 def remove_block(x, y):
-    data[y][x] = None
+    for block in get_syblings(x, y):
+        data[block[0]][block[1]] = None
