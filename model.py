@@ -14,9 +14,24 @@ def init():
 
 
 def get_block_colour(row, col):
-    if row >= 0 and row < len(data) and col >= 0 and col < len(data[row]):
+    if row >= 0 and row < get_height() and col >= 0 and col < get_width():
         return data[row][col]
     return None
+
+
+def get_syblings(x, y, syblings=None):
+    colour = get_block_colour(x, y)
+    if colour is None:
+        return
+    if syblings is None:
+        syblings = [(x, y)]
+    for neighbour in [(x-1, y), (x, y-1), (x+1, y), (x, y+1)]:
+        if neighbour in syblings:
+            continue
+        if get_block_colour(*neighbour) == colour:
+            syblings.append(neighbour)
+            syblings = get_syblings(*neighbour, syblings=syblings)
+    return syblings
 
 
 def get_height():
