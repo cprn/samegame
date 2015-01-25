@@ -45,6 +45,7 @@ while True:
                     PIECE_WIDTH,
                     PIECE_HEIGHT
                 ))
+    model.run_gravity()
     pygame.display.update()
 
     for event in pygame.event.get():

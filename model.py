@@ -22,7 +22,7 @@ def get_block_colour(x, y):
 def get_syblings(x, y, syblings=None):
     colour = get_block_colour(x, y)
     if colour is None:
-        return
+        return []
     if syblings is None:
         syblings = [(x, y)]
     for neighbour in [(x-1, y), (x, y-1), (x+1, y), (x, y+1)]:
@@ -45,3 +45,11 @@ def get_width():
 def remove_block(x, y):
     for block in get_syblings(x, y):
         data[block[0]][block[1]] = None
+
+
+def run_gravity():
+    for y in reversed(range(get_height())):
+        for x in range(get_width()):
+            if get_block_colour(x, y) is None and y != 0:
+                data[x][y] = data[x][y-1]
+                data[x][y-1] = None
