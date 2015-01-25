@@ -6,9 +6,9 @@ GRID_SIZE = 20
 
 
 def init():
-    for row in range(GRID_SIZE):
+    for y in range(GRID_SIZE):
         r = []
-        for col in range(GRID_SIZE):
+        for x in range(GRID_SIZE):
             r.append(random.randint(0, NUM_COLOURS - 1))
         data.append(r)
 

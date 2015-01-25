@@ -34,14 +34,14 @@ pygame.display.set_caption('Same Game')
 
 while True:
     windowSurface.fill(BLACK)
-    for row in range(model.get_height()):
-        for col in range(model.get_width()):
-            colour = model.get_block_colour(row, col)
+    for y in range(model.get_height()):
+        for x in range(model.get_width()):
+            colour = model.get_block_colour(x, y)
             if colour is not None:
                 pieceColour = PIECE_COLOURS[colour]
                 pygame.draw.rect(windowSurface, pieceColour, (
-                    col * (PIECE_WIDTH + PIECE_MARGIN),
-                    row * (PIECE_HEIGHT + PIECE_MARGIN),
+                    x * (PIECE_WIDTH + PIECE_MARGIN),
+                    y * (PIECE_HEIGHT + PIECE_MARGIN),
                     PIECE_WIDTH,
                     PIECE_HEIGHT
                 ))

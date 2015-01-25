@@ -11,11 +11,11 @@ model.init()
 num_colours = 0
 colours = []
 
-for row in model.data:
-    for col in row:
-        if col not in colours:
+for y in model.data:
+    for x in y:
+        if x not in colours:
             num_colours += 1
-            colours.append(col)
+            colours.append(x)
 
 verify(num_colours == 5, 'Wrong amount of colours')
 
