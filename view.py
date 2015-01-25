@@ -1,10 +1,14 @@
 import pygame
 import sys
-from pygame.locals import QUIT
+from pygame.locals import QUIT, MOUSEBUTTONUP
 import model
 
 
-pygame.init()
+def get_click_pos(event):
+    return (
+        event.pos[0] // (PIECE_WIDTH + PIECE_MARGIN),
+        event.pos[1] // (PIECE_HEIGHT + PIECE_MARGIN)
+    )
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -19,13 +23,14 @@ PIECE_WIDTH = 30
 PIECE_HEIGHT = 30
 PIECE_MARGIN = 2
 
+pygame.init()
+model.init()
+
 windowSurface = pygame.display.set_mode((
     model.get_width() * (PIECE_WIDTH + PIECE_MARGIN),
     model.get_height() * (PIECE_HEIGHT + PIECE_MARGIN)
 ))
 pygame.display.set_caption('Same Game')
-
-model.init()
 
 while True:
     windowSurface.fill(BLACK)
@@ -46,3 +51,5 @@ while True:
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
+        if event.type == MOUSEBUTTONUP:
+            model.remove_block(*get_click_pos(event))

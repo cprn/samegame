@@ -6,7 +6,7 @@ def verify(condition, error):
     if not condition:
         print(error)
 
-model.randomize()
+model.init()
 
 num_colours = 0
 colours = []
@@ -29,5 +29,10 @@ verify(model.get_block_colour(2, 0) is None, "Colour 2,0 not None")
 model.data = [[1, 2, 5, 8], [6, 3, 4, 7]]
 verify(model.get_height() == 2, "Height not 2")
 verify(model.get_width() == 4, "Width not 4")
+
+rm = (1, 1)
+verify(model.get_block_colour(*rm) is not None, "Block 2,0 None before test")
+model.remove_block(*rm)
+verify(model.get_block_colour(*rm)is None, "Block 2,0 not None")
 
 print('END')

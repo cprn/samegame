@@ -2,7 +2,7 @@ import random
 
 data = []
 NUM_COLOURS = 5
-GRID_SIZE = 30
+GRID_SIZE = 20
 
 
 def init():
@@ -20,8 +20,12 @@ def get_block_colour(row, col):
 
 
 def get_height():
-    return GRID_SIZE
+    return len(data)
 
 
 def get_width():
-    return GRID_SIZE
+    return len(data[0])
+
+
+def remove_block(x, y):
+    data[y][x] = None
