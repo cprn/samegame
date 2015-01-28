@@ -14,7 +14,7 @@ def init():
 
 
 def get_block_colour(x, y):
-    if x >= 0 and x < get_width() and y >= 0 and y < get_height():
+    if x in range(get_width()) and y in range(get_height()):
         return data[x][y]
     return None
 
