@@ -32,7 +32,10 @@ windowSurface = pygame.display.set_mode((
 ))
 pygame.display.set_caption('Same Game')
 
+clock = pygame.time.Clock()
+
 while True:
+    clock.tick(30)
     windowSurface.fill(BLACK)
     for y in range(model.get_height()):
         for x in range(model.get_width()):
