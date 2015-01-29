@@ -35,11 +35,13 @@ def get_syblings(x, y, syblings=None):
 
 
 def get_height():
-    return len(data)
+    if len(data):
+        return len(data[0])
+    return 0
 
 
 def get_width():
-    return len(data[0])
+    return len(data)
 
 
 def remove_block(x, y):
@@ -48,8 +50,11 @@ def remove_block(x, y):
 
 
 def run_gravity():
-    for y in reversed(range(get_height())):
-        for x in range(get_width()):
+    for x in reversed(range(get_width())):
+        if data[x] == [None] * get_height():
+            data.pop(x)
+            continue
+        for y in reversed(range(get_height())):
             if get_block_colour(x, y) is None and y != 0:
                 data[x][y] = data[x][y-1]
                 data[x][y-1] = None
