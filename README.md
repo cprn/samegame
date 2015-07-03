@@ -1,7 +1,7 @@
 # Game description
 
 This project exists purely to make my lazy ass do something.
-It’s based on [Model-View-Controller & Pygame](http://youtu.be/als46qthn4k)
+It’s based on [Model-View-Controller & Pygame](http://pyvideo.org/video/2287/model-view-controller-pygame)
 
 ## Game operations
 
