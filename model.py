@@ -19,19 +19,19 @@ def get_block_colour(x, y):
     return None
 
 
-def get_syblings(x, y, syblings=None):
+def get_siblings(x, y, siblings=None):
     colour = get_block_colour(x, y)
     if colour is None:
         return []
-    if syblings is None:
-        syblings = [(x, y)]
+    if siblings is None:
+        siblings = [(x, y)]
     for neighbour in [(x-1, y), (x, y-1), (x+1, y), (x, y+1)]:
-        if neighbour in syblings:
+        if neighbour in siblings:
             continue
         if get_block_colour(*neighbour) == colour:
-            syblings.append(neighbour)
-            syblings = get_syblings(*neighbour, syblings=syblings)
-    return syblings
+            siblings.append(neighbour)
+            siblings = get_siblings(*neighbour, siblings=siblings)
+    return siblings
 
 
 def get_height():
@@ -45,7 +45,7 @@ def get_width():
 
 
 def remove_block(x, y):
-    for block in get_syblings(x, y):
+    for block in get_siblings(x, y):
         data[block[0]][block[1]] = None
 
 

@@ -41,11 +41,11 @@ model.data = [
     [3, 2, 2],
     [1, 1, 1]
 ]
-syblings = [(0, 2), (1, 2), (1, 1)]
-verify(model.get_syblings(*syblings[0]) == syblings, "No syblings")
+siblings = [(0, 2), (1, 2), (1, 1)]
+verify(model.get_siblings(*siblings[0]) == siblings, "No siblings")
 x = (0, 2)
 model.remove_block(*x)
-for s in syblings:
+for s in siblings:
     verify(model.get_block_colour(*s) is None, repr(s) + " not removed")
 
 '''
