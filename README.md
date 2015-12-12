@@ -10,7 +10,6 @@ It’s based on [Model-View-Controller & Pygame](http://pyvideo.org/video/2287/m
   * ~~get block colour~~
   * get number of blocks left
   * get number of moves
-  * get moves remaining
   * ~~get height~~
   * ~~get width~~
   * ~~gravity and shift left if empty column~~
