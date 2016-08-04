@@ -14,6 +14,9 @@ It’s based on [Model-View-Controller & Pygame](http://pyvideo.org/video/2287/m
   * ~~get width~~
   * ~~gravity and shift left if empty column~~
   * ~~get related blocks~~
+  * win game
+  * store top scores
+  * get top scores
 
 ## Data structure
 
