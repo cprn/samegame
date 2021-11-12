@@ -1,22 +1,18 @@
-# Game description
-
-Follows [Model-View-Controller & Pygame](http://pyvideo.org/video/2287/model-view-controller-pygame)
-
 ## Game operations
 
-  * ~~populate game grid~~
-  * ~~remove block~~
-  * ~~get block colour~~
-  * get number of blocks left
-  * get number of moves
-  * ~~get height~~
-  * ~~get width~~
-  * ~~gravity and shift left if empty column~~
-  * ~~get related blocks~~
-  * win game
-  * store top scores
-  * get top scores
+  * [x] populate game grid
+  * [x] remove block
+  * [x] get block colour
+  * [ ] get number of blocks left
+  * [ ] get number of moves
+  * [x] get height
+  * [x] get width
+  * [x] gravity and shift left if empty column
+  * [x] get related blocks
+  * [ ] win game
+  * [ ] store top scores
+  * [ ] get top scores
 
 ## Data structure
 
-list of lists (two dimensional array)
+list of lists (2d array)
